@@ -1,0 +1,10 @@
+LifeCycle Methods- Functions in a class
+componentWillMount- when compenent is rendered on screen, this method is called
+
+
+
+
+
+##commands
+
+npm install --save axios
