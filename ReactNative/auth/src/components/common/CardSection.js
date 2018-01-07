@@ -21,4 +21,6 @@ const styles = {
     }
 };
 
-export default CardSection;
+//export default CardSection;
+
+export {CardSection};

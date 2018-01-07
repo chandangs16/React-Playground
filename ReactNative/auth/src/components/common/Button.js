@@ -36,4 +36,7 @@ const styles = {
     }
 };
 
-export default Button;
+//export default Button;
+
+//if using export *, use below:
+export {Button};
