@@ -1,11 +1,12 @@
 import {
-    EMPLOYEE_UPDATE
+    EMPLOYEE_UPDATE,
+    EMPLOYEE_CREATE
 } from '../actions/types';
 
 const INITIAL_STATE = {
     name: '',
     phone: '',
-    shift: ''
+    shift: 'Monday'
 };
 
 export default (state = INITIAL_STATE,action ) => {
@@ -13,6 +14,8 @@ export default (state = INITIAL_STATE,action ) => {
         case EMPLOYEE_UPDATE:
             // action.payload === {prop: 'name', value: 'jane'}
             return { ...state, [action.payload.prop]: action.payload.value} // [] is key interpolation. key determined at runtime.
+        case EMPLOYEE_CREATE:
+            return INITIAL_STATE;
         default:
             return state;
     }
