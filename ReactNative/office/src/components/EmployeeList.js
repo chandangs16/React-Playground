@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
 import {ListView, View, Text} from 'react-native';
 import { employeesFetch} from '../actions';
@@ -27,6 +28,8 @@ class EmployeeList extends Component {
     }
 
     render() {
+
+        console.log(this.props);
         return (
             <View>
                 <Text>Employee List</Text>
@@ -40,4 +43,14 @@ class EmployeeList extends Component {
     }
 }
 
-export default connect(null, {employeesFetch})(EmployeeList);
+const mapStateToProps = state => {
+    const employees = _.map(state.employees, (val, uid) =>{
+        // return an object containing all properties of employee
+        // model, i.e val
+        return { ...val, uid} // {shift: 'Monday, name" 'S', id: '12sf4'}
+    });
+
+    return { employees };
+}
+
+export default connect(mapStateToProps, {employeesFetch})(EmployeeList);
