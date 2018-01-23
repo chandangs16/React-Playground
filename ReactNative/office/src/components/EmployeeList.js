@@ -29,7 +29,11 @@ class EmployeeList extends Component {
     }
 
     renderRow(employee) {
-        return <ListItem employee={employee.item} />
+        return <ListItem employee={employee} />
+    }
+
+    renderItem({ item }) {
+        return <ListItem employee={item} />
     }
 
     render() {
@@ -38,19 +42,23 @@ class EmployeeList extends Component {
         return (
             <FlatList
                 
+                // data={this.props.employees}
+                // // renderItem= {this.renderRow}
+                // renderItem={({ item }) => <Text>{item.name}</Text>}
+                enableEmptySections
                 data={this.dataSource}
-                renderItem= {this.renderRow}
+                renderItem={this.renderRow}
             />
         );
     }
 }
 
 const mapStateToProps = state => {
-    const employees = _.map(state.employees, (val, uid) =>{
+    const employees = _.map(state.employees, (val, uid) =>({ ...val, uid }));
         // return an object containing all properties of employee
         // model, i.e val
-        return { ...val, uid} // {shift: 'Monday, name" 'S', id: '12sf4'}
-    });
+        //return { ...val, uid} // {shift: 'Monday, name" 'S', id: '12sf4'}
+    //});
 
     return { employees };
 }
