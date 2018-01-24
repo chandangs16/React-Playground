@@ -1,6 +1,6 @@
 // Import a Library to help create a component
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
 // Make a Component
 
@@ -8,7 +8,10 @@ const Header = (props) => {
   const { textStyle, viewStyle } = styles;
   return (
     <View style={viewStyle}>
-    <Text style={textStyle} >{props.headerText}</Text>
+    {/* <Text style={textStyle} >{props.headerText}</Text> */}
+    <Image
+          source={require('../images/asu_sun.png')}
+        />
     </View>
 );
 };
@@ -18,7 +21,7 @@ const styles = {
     backgroundColor: '#F2F2F2',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 60,
+    height: 100,
     paddingTop: 15,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
