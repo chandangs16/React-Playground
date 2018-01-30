@@ -7,6 +7,7 @@ import {employeeUpdate,employeeSave } from '../actions';
 import {Card, CradSection, Button, CardSection,Confirm } from './common';
 
 class EmployeeEdit extends Component {
+    state= {showModal: false};
 
     componentWillMount() {
         _.each(this.props.employee, (value,prop) => {
@@ -42,12 +43,14 @@ class EmployeeEdit extends Component {
                 </CardSection>
 
                 <CardSection>
-                    <Button>
+                    <Button onPress={() => this.setState({showModal: !this.state.showModal})}>
                         Fire Employee
                     </Button>
                 </CardSection>
 
-                <Confirm>
+                <Confirm
+                    visible={this.state.showModal}
+                >
                     Are you sure you want to delete this?
                 </Confirm>
             </Card>
