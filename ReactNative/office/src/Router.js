@@ -5,7 +5,7 @@ import EmployeeList from './components/EmployeeList';
 import EmployeeCreate from './components/EmployeeCreate';
 import EmployeeEdit from './components/EmployeeEdit';
 
-const RouterComponenet = () => {
+const RouterComponent = () => {
     return (
         <Router>
             <Scene key="root" hideNavBar>
@@ -30,4 +30,4 @@ const RouterComponenet = () => {
     );
 };
 
-export default RouterComponenet;
+export default RouterComponent;

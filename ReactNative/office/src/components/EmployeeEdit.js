@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import Communications from 'react-native-communications';
 import EmployeeForm from './EmployeeForm';
 import {employeeUpdate,employeeSave,employeeDelete } from '../actions';
-import {Card, CradSection, Button, CardSection,Confirm } from './common';
+import {Card, Button, CardSection,Confirm } from './common';
 
 class EmployeeEdit extends Component {
     state= {showModal: false};
