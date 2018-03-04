@@ -32,7 +32,11 @@ class Deck extends Component {
 
     render () {
         return (
-            <View>
+            
+            //panHandlers is an object that has bunch of callbacks that help
+            //intercept presses from user
+            //... spreads all the properties over the view
+            <View {...this.state.panResponder.panHandlers}>
                 {this.renderCards()}
             </View>
         );
