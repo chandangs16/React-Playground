@@ -43,7 +43,6 @@ class Deck extends Component {
             ...position.getLayout(),
             transform: [{rotate}]
         };
-
     }
 
     renderCards() {
