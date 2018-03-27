@@ -5,15 +5,36 @@ import {
     StyleSheet,
     Image
 } from 'react-native';
+import {images} from '../Utils/CoinIcons';
+
+const styles= StyleSheet.create({
+    container: {
+        diaplay: "flex"
+    },
+    image: {
+        width: 40,
+        height: 40,
+    },
+    bold: {
+        fontWeight: 'bold'
+    }
+});
+
+const {container,image, bold} = styles;
 
 const CoinCard =(props) => {
     return (
-        <View>
-            <Image />
-            <Text> {props.symbol} </Text>
-            <Text> {props.price_usd} </Text>
-            </View>
-
+        <View style={container}>
+            <Image
+                style= {styles.image}
+                source={{uri: images[symbol]}}
+            />
+            <Text> {symbol} </Text>
+            <Text> {coin_name} </Text>
+            <Text> {price_usd} <Text style={bold}>$</Text></Text>
+            <Text> Change past 24 hours: {percent_change_24h} </Text>
+            <Text> Change past 7 days: {percent_change_7d} </Text>
+        </View>
     )
 }
 
