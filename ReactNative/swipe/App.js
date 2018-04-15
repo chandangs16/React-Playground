@@ -27,7 +27,7 @@ export default class App extends React.Component {
 
       >
         <Text style={{ marginBottom: 10 }}>
-          samle
+          Sample
         </Text>
         <Button
           icon={{name:'code'}}
